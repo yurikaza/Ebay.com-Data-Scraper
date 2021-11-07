@@ -1,0 +1,48 @@
+extends layout
+
+block content
+
+ .container
+  .row.mt-4 
+        form(action='/user/product' method="POST").row.gy-2.gx-3.align-items-center.mt-5
+         .col-auto
+           label.visually-hidden Name
+           input#autoSizingInput.form-control(type='text' name="naessss" placeholder='Product Name')
+         .col-auto
+            label.visually-hidden(for='autoSizingSelect') Preference
+            select#autoSizingSelect.form-select(name="productCountss")
+              option(value='') Number Of Products
+              option(value='50') 50
+              option(value='200') 200
+         .col-auto
+            label.visually-hidden Min Price
+            input#autoSizingInput.form-control(type='text' name="minpricess" placeholder='Min Price')
+         .col-auto
+            label.visually-hidden Max Price
+            input#autoSizingInput.form-control(type='text' name="maxpricess" placeholder='Max Price')
+         .col-auto
+            label.visually-hidden(for='Linklocations') Location
+            select#autoSizingSelect.form-select(name="Linklocations")
+              option(value='98') Default
+              option(value='3') US Only
+              option(value='4') North America
+              option(value='5') Europe
+              option(value='6') Asia
+         .col-auto
+           button.btn.btn-primary(type='submit') Submit  
+   h1.mt-5 
+     a.mt-5.mb-5(href="/user/downloadCsv") Download Csv
+   p.mt-3 Note: If you want to use a CSV file on excel you have to convert your CSV file to an xlsx file 
+      a(href="https://convertio.co/csv-xlsx/") here.
+   each item in devtoLists
+      a(href=item.link, target="_blank" style="color: black; text-decoration: none")  
+        .card.mb-3(style='max-width: 800px;')
+         .row.g-0
+          .col-md-4
+            img.img-fluid.rounded-start(src=item.image alt='...')
+          .col-md-8
+            .card-body
+              h5.card-title= item.title
+              p.card-text= item.price
+              p.card-text 
+                small.text-muted= item.location

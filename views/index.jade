@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  .container
+    .row 
+        form(action='/user/product' method="POST").row.gy-2.gx-3.align-items-center.mt-5
+         .col-auto
+           label.visually-hidden Name
+           input#autoSizingInput.form-control(type='text' name="naessss" placeholder='Product Name')
+         .col-auto
+            label.visually-hidden(for='autoSizingSelect') Preference
+            select#autoSizingSelect.form-select(name="productCountss")
+              option(value='') Number Of Products
+              option(value='50') 50
+              option(value='200') 200
+         .col-auto 
+            label.visually-hidden Min Price
+            input#autoSizingInput.form-control(type='text' name="minpricess" placeholder='Min Price')
+         .col-auto
+            label.visually-hidden Max Price
+            input#autoSizingInput.form-control(type='text' name="maxpricess" placeholder='Max Price')
+         .col-auto
+            label.visually-hidden(for='Linklocations') Location
+            select#autoSizingSelect.form-select(name="Linklocations")
+              option(value='98') Default
+              option(value='3') US Only
+              option(value='4') North America
+              option(value='5') Europe
+              option(value='6') Asia
+         .col-auto
+           button.btn.btn-primary(type='submit') Submit     
+        
+        .container 
+          h3.mt-3.mb-3 About Project 
+          p This project takes data from Ebay.com and converts it into a CSV file.
+          h3.mt-3.mb-3 Connect Us 
+          p 
+           a(href="") Github Repo 
+          p
+           a(href="")  My Portfolio Website
